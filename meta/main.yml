@@ -1,6 +1,6 @@
 galaxy_info:
   author: Chris Smithson
-  description: Used to push a modified version of the picool fan control app to independent RPI
+  description: Used to add and remove apt packages on a schedule controlled by ansible. 
   company: Smithsonite.net
   role_name: aptupdate
 
