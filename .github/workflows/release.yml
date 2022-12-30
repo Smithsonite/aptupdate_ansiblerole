@@ -38,4 +38,4 @@ jobs:
       - name: Galaxy Import
         shell: bash
         run: |
-          galaxy role import --api-key ${{ secrets.GALAXY_API_KEY }} -s "https://galaxy.ansible.com"
+          ansible-galaxy role import --api-key ${{ secrets.GALAXY_API_KEY }} -s "https://galaxy.ansible.com"
