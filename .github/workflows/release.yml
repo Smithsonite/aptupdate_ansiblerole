@@ -26,7 +26,16 @@ jobs:
         shell: bash
         run: |
           echo "${{ env.COMMITTAG }}"
+          if [ -z "${{ env.COMMITTAG }}"]
+          then
+            exit 1
+          fi
       - name: create release
         shell: bash
         run: |
           gh release create ${{ env.COMMITTAG }} --title "${{ env.COMMITTAG }}"
+
+      - name: Galaxy Import
+        shell: bash
+        run: |
+          galaxy role import --api-key ${{ secrets.GALAXY_API_KEY }} -s "https://galaxy.ansible.com"
