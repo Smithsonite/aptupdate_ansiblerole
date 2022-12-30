@@ -2,6 +2,7 @@ galaxy_info:
   author: Chris Smithson
   description: Used to add and remove apt packages on a schedule controlled by ansible.
   company: Smithsonite.net
+  namespace: csmithson12345
   role_name: aptupdate
 
   # If the issue tracker for your role is not on github, uncomment the
