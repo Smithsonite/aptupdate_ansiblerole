@@ -23,10 +23,21 @@ jobs:
       #   run: |
       #     ansible-lint
 
+      # - name: Run ansible-lint
+      #   shell: bash
+      #   run: |
+      #     sudo chown -R root *
+
+      # - name: Run ansible-lint
+      #   uses: ansible/ansible-lint-action@v6.10.0
+
       - name: Run ansible-lint
         shell: bash
         run: |
-          sudo chown -R root *
+          pip install ansible-lint
 
       - name: Run ansible-lint
-        uses: ansible/ansible-lint-action@v6.10.0
+        shell: bash
+        run: |
+          ansible-lint
+
