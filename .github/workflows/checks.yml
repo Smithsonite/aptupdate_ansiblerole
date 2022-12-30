@@ -18,10 +18,10 @@ jobs:
         with:
           fetch-depth: 0 # needed for progressive mode to work
 
-      - name: Run ansible-lint
-        shell: bash
-        run: |
-          ansible-lint
-
       # - name: Run ansible-lint
-      #   uses: ansible/ansible-lint-action@main
+      #   shell: bash
+      #   run: |
+      #     ansible-lint
+
+      - name: Run ansible-lint
+        uses: ansible/ansible-lint-action@main
