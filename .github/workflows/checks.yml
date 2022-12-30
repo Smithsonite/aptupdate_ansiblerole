@@ -26,4 +26,4 @@ jobs:
       - name: Run ansible-lint
         uses: ansible/ansible-lint-action@v6.10.0
         with:
-          path: $GITHUB_PATH
+          path: ${{ github.path }}
