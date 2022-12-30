@@ -24,6 +24,4 @@ jobs:
       #     ansible-lint
 
       - name: Run ansible-lint
-        uses: ansible/ansible-lint-action@main
-        with:
-          path: "."
+        uses: ansible/ansible-lint-action@v6.10.0
