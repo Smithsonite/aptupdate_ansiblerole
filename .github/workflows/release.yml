@@ -1,0 +1,32 @@
+name: Release
+
+on:
+  push:
+    branches: [ "main" ]
+
+  workflow_dispatch:
+
+env:
+  GH_TOKEN: ${{ github.token }}
+
+jobs:
+  deploy_release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: list current tag
+        shell: bash
+        run: |
+          echo "COMMITTAG"="$(git describe --tag --abbrev=0)" >> $GITHUB_ENV
+      - name: echo the tag
+        shell: bash
+        run: |
+          echo "${{ env.COMMITTAG }}"
+      - name: create release
+        shell: bash
+        run: |
+          gh release create ${{ env.COMMITTAG }} --title "${{ env.COMMITTAG }}"
