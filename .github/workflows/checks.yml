@@ -24,6 +24,9 @@ jobs:
       #     ansible-lint
 
       - name: Run ansible-lint
+        shell: bash
+        run: |
+          chown -R root *
+
+      - name: Run ansible-lint
         uses: ansible/ansible-lint-action@v6.10.0
-        with:
-          path: ${{ github.path }}
